@@ -1,0 +1,951 @@
+/* Custom CSS for Portfolio Website */
+
+/* ============================================
+   BRAND COLOR SYSTEM & CSS VARIABLES
+   ============================================ */
+:root {
+    /* Primary Brand Colors - Professional Blue/Purple Gradient */
+    --brand-primary: #6366f1;      /* Indigo 500 */
+    --brand-primary-dark: #4f46e5; /* Indigo 600 */
+    --brand-primary-light: #818cf8; /* Indigo 400 */
+    
+    --brand-secondary: #8b5cf6;     /* Purple 500 */
+    --brand-secondary-dark: #7c3aed; /* Purple 600 */
+    --brand-secondary-light: #a78bfa; /* Purple 400 */
+    
+    --brand-accent: #ec4899;        /* Pink 500 */
+    --brand-accent-dark: #db2777;   /* Pink 600 */
+    
+    /* Gradient Combinations */
+    --brand-gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+    --brand-gradient-secondary: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #db2777 100%);
+    --brand-gradient-subtle: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+    
+    /* Neutral Colors */
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9fafb;
+    
+    /* Dark Mode Colors */
+    --dark-bg-primary: #0f172a;
+    --dark-bg-secondary: #1e293b;
+    --dark-text-primary: #f1f5f9;
+    --dark-text-secondary: #cbd5e1;
+    
+    /* Brand Shadows */
+    --shadow-brand: 0 10px 40px rgba(99, 102, 241, 0.2);
+    --shadow-brand-hover: 0 20px 60px rgba(99, 102, 241, 0.3);
+    --shadow-xl-brand: 0 25px 50px -12px rgba(99, 102, 241, 0.25);
+}
+
+/* Custom Font Application */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--text-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ============================================
+   PROFESSIONAL BRANDING IMPROVEMENTS
+   ============================================ */
+
+/* Brand Logo/Text Styling */
+.brand-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -0.03em;
+    background: var(--brand-gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.brand-logo::before {
+    content: '';
+    position: absolute;
+    left: -0.5rem;
+    width: 0.25rem;
+    height: 100%;
+    background: var(--brand-gradient-primary);
+    border-radius: 0.125rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.brand-logo:hover::before {
+    opacity: 1;
+}
+
+.brand-logo-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.75rem;
+    background: var(--brand-gradient-primary);
+    color: white;
+    font-size: 1.25rem;
+    box-shadow: var(--shadow-brand);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-logo:hover .brand-logo-icon {
+    transform: rotate(5deg) scale(1.05);
+    box-shadow: var(--shadow-brand-hover);
+}
+
+/* Enhanced Navigation Branding */
+nav.scrolled .brand-logo {
+    transform: scale(0.95);
+}
+
+/* Professional Gradient Text */
+.gradient-text {
+    background: var(--brand-gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.gradient-text-2 {
+    background: var(--brand-gradient-secondary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Brand Button Styling */
+.brand-button {
+    position: relative;
+    background: var(--brand-gradient-primary);
+    color: white;
+    padding: 0.875rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: var(--shadow-brand);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    overflow: hidden;
+}
+
+.brand-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    z-index: 0;
+}
+
+.brand-button span,
+.brand-button i {
+    position: relative;
+    z-index: 1;
+}
+
+.brand-button i {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brand-button:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: var(--shadow-brand-hover);
+}
+
+.brand-button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.brand-button:hover i {
+    transform: scale(1.1);
+}
+
+.brand-button:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+.brand-button-secondary {
+    position: relative;
+    background: transparent;
+    color: var(--brand-primary);
+    border: 2px solid var(--brand-primary);
+    box-shadow: none;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brand-button-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--brand-gradient-primary);
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+}
+
+.brand-button-secondary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    z-index: -1;
+}
+
+.brand-button-secondary:hover {
+    color: white;
+    border-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-brand-hover);
+}
+
+.brand-button-secondary:hover::before {
+    left: 0;
+}
+
+.brand-button-secondary:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+.brand-button-secondary:active {
+    transform: translateY(-1px);
+}
+
+/* Icon animation for secondary button */
+.brand-button-secondary i,
+.brand-button-secondary svg {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brand-button-secondary:hover i,
+.brand-button-secondary:hover svg {
+    transform: translateX(4px);
+}
+
+/* Smooth entrance animation for buttons */
+.hero-cta-buttons a {
+    animation: fadeInUp 0.8s ease-out backwards;
+}
+
+.hero-cta-buttons a:nth-child(1) {
+    animation-delay: 0.6s;
+}
+
+.hero-cta-buttons a:nth-child(2) {
+    animation-delay: 0.7s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ripple effect on click */
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.brand-button-secondary:active::after {
+    animation: ripple 0.6s ease-out;
+}
+
+/* Section Headers with Brand Styling */
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.section-header .section-divider {
+    width: 80px;
+    height: 4px;
+    background: var(--brand-gradient-primary);
+    margin: 1.5rem auto;
+    border-radius: 2px;
+}
+
+.section-header p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Brand Card Enhancements */
+.brand-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.brand-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--brand-gradient-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.brand-card:hover::after {
+    transform: scaleX(1);
+}
+
+/* Premium Glass Effect */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-effect {
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced Shadows */
+.shadow-brand {
+    box-shadow: var(--shadow-brand);
+}
+
+.shadow-brand-hover:hover {
+    box-shadow: var(--shadow-brand-hover);
+}
+
+/* Brand Accent Elements */
+.brand-accent-line {
+    width: 100%;
+    height: 2px;
+    background: var(--brand-gradient-primary);
+    margin: 2rem 0;
+    opacity: 0.3;
+}
+
+/* Professional Hover Effects */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl-brand);
+}
+
+/* Brand Color Utilities */
+.text-brand-primary {
+    color: var(--brand-primary);
+}
+
+.text-brand-secondary {
+    color: var(--brand-secondary);
+}
+
+.bg-brand-gradient {
+    background: var(--brand-gradient-primary);
+}
+
+.border-brand {
+    border-color: var(--brand-primary);
+}
+
+/* Custom Animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 1s ease-out;
+}
+
+.animate-slide-up {
+    animation: slide-up 0.8s ease-out;
+}
+
+.animate-slide-up.delay-200 {
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
+}
+
+.animate-slide-up.delay-400 {
+    animation-delay: 0.4s;
+    animation-fill-mode: both;
+}
+
+.animate-slide-up.delay-600 {
+    animation-delay: 0.6s;
+    animation-fill-mode: both;
+}
+
+.delay-500 {
+    animation-delay: 0.5s;
+}
+
+.delay-1000 {
+    animation-delay: 1s;
+}
+
+/* Progress Bar Animation */
+.progress-bar {
+    width: 0;
+    transition: width 2s ease-in-out;
+}
+
+.progress-bar.animated {
+    animation: progressAnimation 2s ease-in-out forwards;
+}
+
+@keyframes progressAnimation {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--target-width);
+    }
+}
+
+/* Skill Card Hover Effect */
+.skill-card:hover {
+    border-color: rgba(59, 130, 246, 0.5);
+}
+
+/* Service Card Hover Effect */
+.service-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.service-card:hover::before {
+    left: 100%;
+}
+
+/* Service Card CTA Overlay */
+.service-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    border-radius: 0.75rem;
+    z-index: 10;
+}
+
+.service-card:hover .service-card-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.service-card-cta-button {
+    padding: 0.875rem 2rem;
+    background: var(--brand-gradient-primary);
+    color: white;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transform: translateY(20px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    box-shadow: var(--shadow-brand);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.service-card:hover .service-card-cta-button {
+    transform: translateY(0);
+}
+
+.service-card-cta-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: var(--shadow-brand-hover);
+}
+
+.service-card-cta-button:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+.service-card-cta-text {
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+}
+
+.service-card:hover .service-card-cta-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ensure content is visible when not hovering */
+.service-card-content {
+    transition: opacity 0.3s ease;
+}
+
+.service-card:hover .service-card-content {
+    opacity: 0.3;
+}
+
+/* Mobile Touch Support */
+@media (max-width: 768px) {
+    .service-card-overlay {
+        opacity: 0.95;
+        visibility: visible;
+        background: rgba(0, 0, 0, 0.9);
+    }
+    
+    .service-card-cta-button {
+        transform: translateY(0);
+    }
+    
+    .service-card-cta-text {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .service-card:hover .service-card-content {
+        opacity: 0.4;
+    }
+}
+
+/* Dark mode adjustments for overlay */
+.dark .service-card-overlay {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* Service Badge Styles */
+.service-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.375rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    z-index: 20;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    animation: pulse-badge 2s ease-in-out infinite;
+}
+
+.service-badge.most-selling {
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
+    color: white;
+}
+
+.service-badge.recommended {
+    background: linear-gradient(135deg, #10b981, #3b82f6);
+    color: white;
+}
+
+.service-badge.new {
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    color: white;
+}
+
+@keyframes pulse-badge {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.service-card {
+    position: relative;
+}
+
+/* Adjust service card layout for 9 items */
+@media (min-width: 1280px) {
+    #services .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1279px) and (min-width: 768px) {
+    #services .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Badge responsive adjustments */
+@media (max-width: 640px) {
+    .service-badge {
+        font-size: 0.625rem;
+        padding: 0.25rem 0.5rem;
+        top: 0.75rem;
+        right: 0.75rem;
+    }
+    
+    .service-badge.recommended {
+        font-size: 0.55rem;
+        padding: 0.25rem 0.4rem;
+        line-height: 1.2;
+    }
+}
+
+/* Long badge text handling */
+.service-badge.recommended {
+    max-width: calc(100% - 2rem);
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1.3;
+}
+
+@media (min-width: 641px) {
+    .service-badge.recommended {
+        max-width: 200px;
+        text-align: center;
+    }
+}
+
+/* Portfolio Filter Active State */
+.filter-btn.active {
+    background: var(--brand-gradient-primary) !important;
+    color: white !important;
+    box-shadow: var(--shadow-brand);
+}
+
+/* Portfolio Item Fade Animation */
+.portfolio-item {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.portfolio-item.hidden {
+    opacity: 0;
+    transform: scale(0.9);
+    display: none;
+}
+
+/* Testimonial Card Animation */
+.testimonial-card {
+    position: relative;
+}
+
+/* Form Input Focus Styles */
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #3b82f6 !important;
+}
+
+/* Error Message Styles */
+.error-message.show {
+    display: block !important;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+/* Back to Top Button */
+#backToTop {
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+}
+
+#backToTop.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Loading Animation */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+.loading.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Scroll Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Navbar Scroll Effect */
+nav.scrolled {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Menu Animation */
+#mobileMenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+#mobileMenu.show {
+    max-height: 500px;
+}
+
+/* Text Selection */
+::selection {
+    background: rgba(99, 102, 241, 0.3);
+    color: inherit;
+}
+
+/* Counter Animation Styles */
+.counter {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    font-variant-numeric: tabular-nums;
+}
+
+.counter-complete {
+    animation: counterPulse 0.6s ease-out;
+}
+
+@keyframes counterPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Statistics Cards Enhancement */
+.statistics-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.statistics-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.statistics-card:hover::before {
+    left: 100%;
+}
+
+.statistics-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.statistics-card.counter-complete {
+    animation: cardGlow 1s ease-out;
+}
+
+@keyframes cardGlow {
+    0%, 100% {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        box-shadow: 0 15px 35px rgba(99, 102, 241, 0.3);
+    }
+}
+
+/* Scrollbar Styling (Webkit browsers) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #2563eb, #9333ea);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #1d4ed8, #7e22ce);
+}
+
+/* Dark Mode Scrollbar */
+.dark ::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #3b82f6, #a855f7);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .animate-slide-up {
+        animation-duration: 0.6s;
+    }
+    
+    .service-card,
+    .skill-card,
+    .portfolio-item {
+        transform: none;
+    }
+    
+    .service-card:hover,
+    .skill-card:hover,
+    .portfolio-item:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* Print Styles */
+@media print {
+    nav,
+    #backToTop,
+    footer {
+        display: none;
+    }
+}

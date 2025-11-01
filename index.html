@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Web Developer Portfolio | WordPress & Shopify Expert</title>
+    <meta name="description" content="Professional E-commerce Web Developer specializing in WordPress, Shopify, and AI Chatbot Integration. Creating conversion-focused online stores.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Brand Color Utilities -->
+    <style>
+        .text-brand-primary { color: var(--brand-primary); }
+        .text-brand-secondary { color: var(--brand-secondary); }
+        .text-brand-accent { color: var(--brand-accent); }
+        .bg-brand-gradient { background: var(--brand-gradient-primary); }
+        .shadow-brand { box-shadow: var(--shadow-brand); }
+        .shadow-brand-hover:hover { box-shadow: var(--shadow-brand-hover); }
+        .hover\:text-brand-primary:hover { color: var(--brand-primary); }
+        .hover\:bg-brand-primary:hover { background: var(--brand-primary); }
+        .hover\:text-brand-accent:hover { color: var(--brand-accent); }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 transition-colors duration-300">
+    
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <div class="flex items-center">
+                    <a href="#home" class="brand-logo">
+                        <span class="brand-logo-icon">
+                            <i class="fas fa-cube"></i>
+                        </span>
+                        <span class="brand-logo-text">DevPortfolio</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 dark:text-gray-300 hover:text-brand-primary transition-colors font-medium">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 dark:text-gray-300 hover:text-brand-primary transition-colors font-medium">About</a>
+                    <a href="#skills" class="nav-link text-gray-700 dark:text-gray-300 hover:text-brand-primary transition-colors font-medium">Skills</a>
+                    <a href="#services" class="nav-link text-gray-700 dark:text-gray-300 hover:text-brand-primary transition-colors font-medium">Services</a>
+                    <a href="#portfolio" class="nav-link text-gray-700 dark:text-gray-300 hover:text-brand-primary transition-colors font-medium">Portfolio</a>
+                    <a href="#testimonials" class="nav-link text-gray-700 dark:text-gray-300 hover:text-brand-primary transition-colors font-medium">Testimonials</a>
+                    <a href="#contact" class="nav-link text-gray-700 dark:text-gray-300 hover:text-brand-primary transition-colors font-medium">Contact</a>
+                    
+                    <!-- Dark Mode Toggle -->
+                    <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden p-2 text-gray-700 dark:text-gray-300">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#home" class="mobile-nav-link block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a>
+                <a href="#about" class="mobile-nav-link block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
+                <a href="#skills" class="mobile-nav-link block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a>
+                <a href="#services" class="mobile-nav-link block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Services</a>
+                <a href="#portfolio" class="mobile-nav-link block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Portfolio</a>
+                <a href="#testimonials" class="mobile-nav-link block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Testimonials</a>
+                <a href="#contact" class="mobile-nav-link block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a>
+                <button id="darkModeToggleMobile" class="w-full text-left p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                    <i class="fas fa-moon dark:hidden mr-2"></i>
+                    <i class="fas fa-sun hidden dark:inline mr-2"></i>
+                    Toggle Dark Mode
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 md:pt-20">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+        
+        <!-- Floating Shapes -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-blue-400 rounded-full opacity-20 blur-xl animate-pulse"></div>
+        <div class="absolute bottom-20 right-10 w-32 h-32 bg-purple-400 rounded-full opacity-20 blur-xl animate-pulse delay-1000"></div>
+        <div class="absolute top-1/2 left-1/4 w-24 h-24 bg-pink-400 rounded-full opacity-20 blur-xl animate-pulse delay-500"></div>
+        
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center">
+                <!-- Animated Greeting -->
+                <div class="mb-6 animate-fade-in">
+                    <span class="text-lg md:text-xl text-brand-primary dark:text-brand-primary-light font-semibold">Hello, I'm</span>
+                </div>
+                
+                <!-- Main Headline -->
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 animate-slide-up">
+                    <span class="gradient-text">
+                        E-commerce Web Developer
+                    </span>
+                </h1>
+                
+                <!-- Subheading -->
+                <p class="text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 mb-4 animate-slide-up delay-200 font-medium">
+                    WordPress • Shopify • AI Solutions
+                </p>
+                
+                <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-10 animate-slide-up delay-400">
+                    Creating conversion-focused online stores with cutting-edge technology and seamless user experiences
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="hero-cta-buttons flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#contact" class="brand-button text-lg">
+                        <i class="fas fa-envelope"></i>
+                        <span>Get In Touch</span>
+                    </a>
+                    <a href="#portfolio" class="brand-button-secondary text-lg">
+                        <i class="fas fa-briefcase"></i>
+                        <span>View My Work</span>
+                    </a>
+                </div>
+                
+                <!-- Scroll Indicator -->
+                <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+                    <a href="#about" class="text-gray-400 dark:text-gray-600">
+                        <i class="fas fa-chevron-down text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-header">
+                <h2 class="gradient-text">About Me</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Profile Image -->
+                <div class="text-center md:text-left">
+                    <div class="relative inline-block">
+                        <!-- Replace with your actual photo -->
+                        <div class="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full bg-gradient-to-br from-blue-400 to-purple-600 p-1">
+                            <div class="w-full h-full rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
+                                <!-- Placeholder - Replace with <img src="The College WAllah.jpg" alt="Habib Ur Rahman" class="w-full h-full object-cover"> -->
+                                <i class="fas fa-user text-8xl text-gray-400 dark:text-gray-600"></i>
+                            </div>
+                        </div>
+                        <!-- Decorative Elements -->
+                        <div class="absolute -top-4 -right-4 w-24 h-24 bg-yellow-400 rounded-full opacity-20 blur-xl animate-pulse"></div>
+                        <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-pink-400 rounded-full opacity-20 blur-xl animate-pulse delay-500"></div>
+                    </div>
+                </div>
+                
+                <!-- Bio Content -->
+                <div>
+                    <h3 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">
+                        Passionate E-commerce Developer
+                    </h3>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                        With years of experience in e-commerce development, I specialize in creating high-converting online stores using WordPress and Shopify. My expertise extends to integrating AI-powered chatbots that enhance customer engagement and drive sales.
+                    </p>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                        I combine technical excellence with a deep understanding of e-commerce best practices to deliver solutions that not only look great but also perform exceptionally well.
+                    </p>
+                    
+                    <!-- Why Choose Me -->
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3 text-xl"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Conversion-focused design approach</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3 text-xl"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Seamless payment gateway integration</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3 text-xl"></i>
+                            <span class="text-gray-700 dark:text-gray-300">AI chatbot implementation expertise</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3 text-xl"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Responsive, mobile-first development</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Statistics -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
+                <div class="statistics-card text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-800 dark:to-gray-700 rounded-xl shadow-lg">
+                    <div class="text-4xl md:text-5xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+                        <span class="counter" data-target="50">0</span><span class="counter-suffix">+</span>
+                    </div>
+                    <div class="text-gray-700 dark:text-gray-300 font-semibold">Projects Completed</div>
+                </div>
+                <div class="statistics-card text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-gray-800 dark:to-gray-700 rounded-xl shadow-lg">
+                    <div class="text-4xl md:text-5xl font-bold text-purple-600 dark:text-purple-400 mb-2">
+                        <span class="counter" data-target="45">0</span><span class="counter-suffix">+</span>
+                    </div>
+                    <div class="text-gray-700 dark:text-gray-300 font-semibold">Happy Clients</div>
+                </div>
+                <div class="statistics-card text-center p-6 bg-gradient-to-br from-pink-50 to-pink-100 dark:from-gray-800 dark:to-gray-700 rounded-xl shadow-lg">
+                    <div class="text-4xl md:text-5xl font-bold text-pink-600 dark:text-pink-400 mb-2">
+                        <span class="counter" data-target="5">0</span><span class="counter-suffix">+</span>
+                    </div>
+                    <div class="text-gray-700 dark:text-gray-300 font-semibold">Years Experience</div>
+                </div>
+                <div class="statistics-card text-center p-6 bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 rounded-xl shadow-lg">
+                    <div class="text-4xl md:text-5xl font-bold text-green-600 dark:text-green-400 mb-2">
+                        <span class="counter" data-target="100">0</span><span class="counter-suffix">%</span>
+                    </div>
+                    <div class="text-gray-700 dark:text-gray-300 font-semibold">Client Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-header">
+                <h2 class="gradient-text">Skills & Expertise</h2>
+                <div class="section-divider"></div>
+                <p>Technologies and platforms I specialize in</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- WordPress -->
+                <div class="skill-card bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fab fa-wordpress text-4xl text-blue-600 dark:text-blue-400"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">WordPress Development</h3>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 mb-4">
+                            <div class="progress-bar bg-gradient-to-r from-blue-600 to-purple-600 h-3 rounded-full" data-width="95"></div>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400">95%</p>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 text-center">
+                        Custom themes, plugins, WooCommerce integration, and performance optimization
+                    </p>
+                </div>
+                
+                <!-- Shopify -->
+                <div class="skill-card bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fab fa-shopify text-4xl text-green-600 dark:text-green-400"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Shopify Store Setup</h3>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 mb-4">
+                            <div class="progress-bar bg-gradient-to-r from-green-600 to-teal-600 h-3 rounded-full" data-width="90"></div>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400">90%</p>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 text-center">
+                        Store customization, theme development, app integration, and SEO optimization
+                    </p>
+                </div>
+                
+                <!-- AI Chatbots -->
+                <div class="skill-card bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-robot text-4xl text-purple-600 dark:text-purple-400"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">AI Chatbot Integration</h3>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 mb-4">
+                            <div class="progress-bar bg-gradient-to-r from-purple-600 to-pink-600 h-3 rounded-full" data-width="85"></div>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400">85%</p>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 text-center">
+                        ChatGPT integration, custom chatbots, conversational AI, and automation
+                    </p>
+                </div>
+                
+                <!-- E-commerce Optimization -->
+                <div class="skill-card bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-chart-line text-4xl text-orange-600 dark:text-orange-400"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">E-commerce Optimization</h3>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 mb-4">
+                            <div class="progress-bar bg-gradient-to-r from-orange-600 to-red-600 h-3 rounded-full" data-width="92"></div>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400">92%</p>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 text-center">
+                        Conversion rate optimization, page speed, user experience, and analytics
+                    </p>
+                </div>
+                
+                <!-- Payment Gateways -->
+                <div class="skill-card bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-indigo-100 dark:bg-indigo-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-credit-card text-4xl text-indigo-600 dark:text-indigo-400"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Payment Gateway Integration</h3>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 mb-4">
+                            <div class="progress-bar bg-gradient-to-r from-indigo-600 to-blue-600 h-3 rounded-full" data-width="88"></div>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400">88%</p>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 text-center">
+                        Stripe, PayPal, Square, and other payment processors integration
+                    </p>
+                </div>
+                
+                <!-- Store Migration -->
+                <div class="skill-card bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-teal-100 dark:bg-teal-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-exchange-alt text-4xl text-teal-600 dark:text-teal-400"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Store Migration</h3>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 mb-4">
+                            <div class="progress-bar bg-gradient-to-r from-teal-600 to-cyan-600 h-3 rounded-full" data-width="90"></div>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400">90%</p>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 text-center">
+                        Seamless migration between platforms with zero downtime
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-header">
+                <h2 class="gradient-text">Services</h2>
+                <div class="section-divider"></div>
+                <p>Comprehensive e-commerce solutions tailored to your business needs</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- WordPress E-commerce -->
+                <div class="service-card bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-blue-500 dark:hover:border-purple-500">
+                    <div class="text-5xl mb-6 text-blue-600 dark:text-blue-400">
+                        <i class="fab fa-wordpress"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">WordPress E-commerce Sites</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">
+                        Custom WordPress websites with WooCommerce integration, tailored to your brand and optimized for conversions.
+                    </p>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Custom Theme Development</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>WooCommerce Setup</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Plugin Development</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Performance Optimization</li>
+                    </ul>
+                </div>
+                
+                <!-- Shopify Development -->
+                <div class="service-card bg-gradient-to-br from-green-50 to-teal-50 dark:from-gray-800 dark:to-gray-700 p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-green-500 dark:hover:border-teal-500">
+                    <div class="text-5xl mb-6 text-green-600 dark:text-green-400">
+                        <i class="fab fa-shopify"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Shopify Store Development</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">
+                        Complete Shopify store setup from design to launch, with custom themes and seamless app integrations.
+                    </p>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Store Setup & Configuration</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Custom Theme Design</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>App Integration</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>SEO Optimization</li>
+                    </ul>
+                </div>
+                
+                <!-- AI Chatbot Integration -->
+                <div class="service-card bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-700 p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-purple-500 dark:hover:border-pink-500">
+                    <div class="text-5xl mb-6 text-purple-600 dark:text-purple-400">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">AI Chatbot Integration</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">
+                        Intelligent chatbots powered by ChatGPT and custom AI solutions to enhance customer support and engagement.
+                    </p>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>ChatGPT Integration</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Custom Bot Development</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Conversational AI</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Automation Setup</li>
+                    </ul>
+                </div>
+                
+                <!-- Store Migration -->
+                <div class="service-card bg-gradient-to-br from-orange-50 to-red-50 dark:from-gray-800 dark:to-gray-700 p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-orange-500 dark:hover:border-red-500">
+                    <div class="text-5xl mb-6 text-orange-600 dark:text-orange-400">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Store Migration & Optimization</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">
+                        Seamless migration between platforms with data preservation and post-migration optimization.
+                    </p>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Platform Migration</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Data Transfer</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Performance Tuning</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>SEO Preservation</li>
+                    </ul>
+                </div>
+                
+                <!-- Payment Integration -->
+                <div class="service-card bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-indigo-500 dark:hover:border-blue-500">
+                    <div class="text-5xl mb-6 text-indigo-600 dark:text-indigo-400">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Payment Gateway Integration</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">
+                        Secure payment processing integration with major providers like Stripe, PayPal, and Square.
+                    </p>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Stripe Integration</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>PayPal Setup</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Multi-Gateway Support</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Security Compliance</li>
+                    </ul>
+                </div>
+                
+                <!-- E-commerce Consulting -->
+                <div class="service-card bg-gradient-to-br from-teal-50 to-cyan-50 dark:from-gray-800 dark:to-gray-700 p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-transparent hover:border-teal-500 dark:hover:border-cyan-500">
+                    <div class="text-5xl mb-6 text-teal-600 dark:text-teal-400">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">E-commerce Consulting</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">
+                        Strategic guidance on platform selection, optimization strategies, and growth tactics.
+                    </p>
+                    <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Platform Analysis</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Conversion Optimization</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Growth Strategy</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Technical Audit</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-header">
+                <h2 class="gradient-text">Portfolio</h2>
+                <div class="section-divider"></div>
+                <p>Showcasing my recent e-commerce projects</p>
+            </div>
+            
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="filter-btn active px-6 py-3 bg-brand-gradient text-white rounded-full font-semibold shadow-brand hover:shadow-brand-hover transition-all" data-filter="all">
+                    All Projects
+                </button>
+                <button class="filter-btn px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full font-semibold hover:bg-brand-primary hover:text-white transition-all" data-filter="wordpress">
+                    WordPress
+                </button>
+                <button class="filter-btn px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full font-semibold hover:bg-brand-primary hover:text-white transition-all" data-filter="shopify">
+                    Shopify
+                </button>
+                <button class="filter-btn px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full font-semibold hover:bg-brand-primary hover:text-white transition-all" data-filter="ai">
+                    AI Projects
+                </button>
+            </div>
+            
+            <!-- Project Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolioGrid">
+                <!-- Project 1 - WordPress -->
+                <div class="portfolio-item bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300" data-category="wordpress">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center">
+                        <!-- Replace with project image -->
+                        <i class="fab fa-wordpress text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 rounded-full text-sm font-semibold">WordPress</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400 rounded-full text-sm font-semibold">WooCommerce</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Fashion E-commerce Store</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Modern WordPress store with custom theme, advanced product filtering, and payment integration.
+                        </p>
+                        <a href="#" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline">
+                            View Details <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 - Shopify -->
+                <div class="portfolio-item bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300" data-category="shopify">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-teal-600 flex items-center justify-center">
+                        <i class="fab fa-shopify text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400 rounded-full text-sm font-semibold">Shopify</span>
+                            <span class="px-3 py-1 bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 rounded-full text-sm font-semibold">Custom Theme</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Electronics Retail Store</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Fully customized Shopify store with unique design, product bundles, and subscription options.
+                        </p>
+                        <a href="#" class="text-green-600 dark:text-green-400 font-semibold hover:underline">
+                            View Details <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 - AI Chatbot -->
+                <div class="portfolio-item bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300" data-category="ai">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-pink-600 flex items-center justify-center">
+                        <i class="fas fa-robot text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400 rounded-full text-sm font-semibold">AI Chatbot</span>
+                            <span class="px-3 py-1 bg-pink-100 dark:bg-pink-900 text-pink-600 dark:text-pink-400 rounded-full text-sm font-semibold">ChatGPT</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">AI Customer Support Bot</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Intelligent chatbot integrated with ChatGPT API for 24/7 customer support and lead generation.
+                        </p>
+                        <a href="#" class="text-purple-600 dark:text-purple-400 font-semibold hover:underline">
+                            View Details <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 4 - WordPress -->
+                <div class="portfolio-item bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300" data-category="wordpress">
+                    <div class="h-48 bg-gradient-to-br from-orange-400 to-red-600 flex items-center justify-center">
+                        <i class="fab fa-wordpress text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 rounded-full text-sm font-semibold">WordPress</span>
+                            <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-400 rounded-full text-sm font-semibold">WooCommerce</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Jewelry Online Store</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Elegant WordPress e-commerce site with custom product galleries and international shipping support.
+                        </p>
+                        <a href="#" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline">
+                            View Details <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 5 - Shopify -->
+                <div class="portfolio-item bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300" data-category="shopify">
+                    <div class="h-48 bg-gradient-to-br from-indigo-400 to-blue-600 flex items-center justify-center">
+                        <i class="fab fa-shopify text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400 rounded-full text-sm font-semibold">Shopify</span>
+                            <span class="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 rounded-full text-sm font-semibold">Apps</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Health & Wellness Store</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Shopify store with subscription products, customer portal, and loyalty program integration.
+                        </p>
+                        <a href="#" class="text-green-600 dark:text-green-400 font-semibold hover:underline">
+                            View Details <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 6 - AI Integration -->
+                <div class="portfolio-item bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300" data-category="ai">
+                    <div class="h-48 bg-gradient-to-br from-teal-400 to-cyan-600 flex items-center justify-center">
+                        <i class="fas fa-robot text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400 rounded-full text-sm font-semibold">AI</span>
+                            <span class="px-3 py-1 bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 rounded-full text-sm font-semibold">Automation</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Smart Product Recommendations</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            AI-powered recommendation engine integrated with e-commerce store for personalized shopping experience.
+                        </p>
+                        <a href="#" class="text-purple-600 dark:text-purple-400 font-semibold hover:underline">
+                            View Details <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 7 - WordPress -->
+                <div class="portfolio-item bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300" data-category="wordpress">
+                    <div class="h-48 bg-gradient-to-br from-pink-400 to-rose-600 flex items-center justify-center">
+                        <i class="fab fa-wordpress text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 rounded-full text-sm font-semibold">WordPress</span>
+                            <span class="px-3 py-1 bg-pink-100 dark:bg-pink-900 text-pink-600 dark:text-pink-400 rounded-full text-sm font-semibold">Multi-vendor</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Marketplace Platform</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Multi-vendor marketplace built on WordPress with vendor dashboard and commission management.
+                        </p>
+                        <a href="#" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline">
+                            View Details <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 8 - Shopify -->
+                <div class="portfolio-item bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300" data-category="shopify">
+                    <div class="h-48 bg-gradient-to-br from-yellow-400 to-orange-600 flex items-center justify-center">
+                        <i class="fab fa-shopify text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400 rounded-full text-sm font-semibold">Shopify</span>
+                            <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-600 dark:text-orange-400 rounded-full text-sm font-semibold">B2B</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">B2B Wholesale Store</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Shopify Plus store with B2B features, custom pricing, and bulk order functionality.
+                        </p>
+                        <a href="#" class="text-green-600 dark:text-green-400 font-semibold hover:underline">
+                            View Details <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-header">
+                <h2 class="gradient-text">Client Testimonials</h2>
+                <div class="section-divider"></div>
+                <p>What clients say about working with me</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="testimonialsContainer">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-gray-50 dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 text-lg">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-6 italic">
+                        "Exceptional work! The WordPress store was delivered on time and exceeded our expectations. The custom features and seamless payment integration made a huge difference to our sales."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                            JD
+                        </div>
+                        <div>
+                            <div class="font-bold text-gray-800 dark:text-white">John Doe</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">CEO, Fashion Brand</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-gray-50 dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 text-lg">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-6 italic">
+                        "The Shopify store migration was flawless! Zero downtime and all our data was perfectly transferred. The AI chatbot integration has significantly improved our customer service response time."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                            SM
+                        </div>
+                        <div>
+                            <div class="font-bold text-gray-800 dark:text-white">Sarah Miller</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Founder, Tech Store</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-gray-50 dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 text-lg">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-6 italic">
+                        "Professional, responsive, and incredibly skilled. The custom e-commerce solution transformed our online business. Highly recommend for any WordPress or Shopify project!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                            MR
+                        </div>
+                        <div>
+                            <div class="font-bold text-gray-800 dark:text-white">Michael Rodriguez</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Director, Retail Company</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card bg-gray-50 dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 md:col-span-2 lg:col-span-1">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 text-lg">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-6 italic">
+                        "The AI chatbot integration was a game-changer for our customer engagement. Sales increased by 30% after implementation. Outstanding work and great communication throughout the project."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-red-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                            EW
+                        </div>
+                        <div>
+                            <div class="font-bold text-gray-800 dark:text-white">Emily Wilson</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Marketing Manager, E-commerce Brand</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-header">
+                <h2 class="gradient-text">Get In Touch</h2>
+                <div class="section-divider"></div>
+                <p>Let's discuss your next e-commerce project</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Contact Form -->
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-xl">
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Send a Message</h3>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all" placeholder="Your Name">
+                            <span class="error-message text-red-500 text-sm hidden"></span>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all" placeholder="your.email@example.com">
+                            <span class="error-message text-red-500 text-sm hidden"></span>
+                        </div>
+                        
+                        <div>
+                            <label for="projectType" class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Project Type</label>
+                            <select id="projectType" name="projectType" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+                                <option value="">Select a project type</option>
+                                <option value="wordpress">WordPress E-commerce Site</option>
+                                <option value="shopify">Shopify Store Development</option>
+                                <option value="ai-chatbot">AI Chatbot Integration</option>
+                                <option value="migration">Store Migration</option>
+                                <option value="consulting">E-commerce Consulting</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="error-message text-red-500 text-sm hidden"></span>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all resize-none" placeholder="Tell me about your project..."></textarea>
+                            <span class="error-message text-red-500 text-sm hidden"></span>
+                        </div>
+                        
+                        <button type="submit" class="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        </button>
+                        
+                        <div id="formSuccess" class="hidden p-4 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded-lg">
+                            <i class="fas fa-check-circle mr-2"></i>Message sent successfully! I'll get back to you soon.
+                        </div>
+                        
+                        <div id="formError" class="hidden p-4 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 rounded-lg">
+                            <i class="fas fa-exclamation-circle mr-2"></i>There was an error sending your message. Please try again.
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <!-- Availability Status -->
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-xl">
+                        <div class="flex items-center mb-4">
+                            <div class="w-3 h-3 bg-green-500 rounded-full mr-3 animate-pulse"></div>
+                            <span class="text-gray-700 dark:text-gray-300 font-semibold">Available for Projects</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">
+                            Typically responds within 24 hours
+                        </p>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-xl">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Connect With Me</h3>
+                        <div class="space-y-4">
+                            <a href="https://linkedin.com" target="_blank" class="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                <i class="fab fa-linkedin text-2xl mr-4 w-8"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://github.com" target="_blank" class="flex items-center text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+                                <i class="fab fa-github text-2xl mr-4 w-8"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="mailto:your.email@example.com" class="flex items-center text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 transition-colors">
+                                <i class="fas fa-envelope text-2xl mr-4 w-8"></i>
+                                <span>Email</span>
+                            </a>
+                            <a href="https://wa.me/1234567890" target="_blank" class="flex items-center text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors">
+                                <i class="fab fa-whatsapp text-2xl mr-4 w-8"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Info -->
+                    <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-xl">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Quick Info</h3>
+                        <div class="space-y-3 text-gray-600 dark:text-gray-400">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt mr-3 mt-1 text-blue-600 dark:text-blue-400"></i>
+                                <span>Location: [Update with your location]</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-clock mr-3 mt-1 text-blue-600 dark:text-blue-400"></i>
+                                <span>Timezone: [Update with your timezone]</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-language mr-3 mt-1 text-blue-600 dark:text-blue-400"></i>
+                                <span>Languages: English, [Add others]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-gray-300 py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="inline-flex items-center gap-3 mb-4">
+                    <span class="brand-logo-icon" style="width: 2rem; height: 2rem; font-size: 1rem;">
+                        <i class="fas fa-cube"></i>
+                    </span>
+                    <span class="text-2xl font-bold gradient-text">DevPortfolio</span>
+                </div>
+                <p class="mb-6 text-gray-400">E-commerce Web Developer | WordPress & Shopify Expert</p>
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="https://linkedin.com" target="_blank" class="text-gray-400 hover:text-brand-primary transition-colors transform hover:scale-110">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="text-gray-400 hover:text-white transition-colors transform hover:scale-110">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="mailto:your.email@example.com" class="text-gray-400 hover:text-brand-accent transition-colors transform hover:scale-110">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </a>
+                    <a href="https://wa.me/1234567890" target="_blank" class="text-gray-400 hover:text-green-400 transition-colors transform hover:scale-110">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                    </a>
+                </div>
+                <div class="border-t border-gray-800 pt-6">
+                    <p class="text-gray-500">
+                        &copy; <span id="currentYear"></span> All rights reserved. Built with <span class="text-brand-primary">passion</span> for e-commerce excellence.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-brand-gradient text-white p-4 rounded-full shadow-brand hover:shadow-brand-hover transform hover:scale-110 transition-all duration-300 opacity-0 invisible z-50">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- Configuration File - Load First -->
+    <script src="config.js"></script>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
